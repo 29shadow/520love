@@ -18,15 +18,18 @@
             overflow-y: auto;
             font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
             background: linear-gradient(135deg, #0c0026 0%, #1a0033 25%, #2d0040 50%, #1a0033 75%, #0c0026 100%);
+            background-attachment: fixed;
             background-size: 400% 400%;
             animation: bgShift 15s ease infinite;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             touch-action: manipulation;
             -webkit-tap-highlight-color: transparent;
             -webkit-user-select: none;
             user-select: none;
+            padding: 40px 16px 80px;
         }
 
         @keyframes bgShift {
@@ -77,7 +80,9 @@
             position: relative;
             z-index: 10;
             text-align: center;
-            padding: 20px;
+            padding: 20px 10px;
+            width: 100%;
+            max-width: 500px;
         }
 
         /* 大爱心 */
@@ -148,12 +153,12 @@
 
         /* 打字机区域 */
         .typewriter-wrapper {
-            margin-top: 30px;
-            padding: 20px 16px;
-            max-width: 90vw;
-            width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            position: relative;
+            z-index: 10;
+            margin-top: 24px;
+            padding: 18px 14px;
+            width: 100%;
+            max-width: 500px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 16px;
             border: 1px solid rgba(255, 150, 180, 0.2);
@@ -164,11 +169,11 @@
 
         .typewriter-text {
             color: #ffb8c9;
-            font-size: min(3.8vw, 17px);
+            font-size: 15px;
             line-height: 1.9;
             text-align: left;
             letter-spacing: 0.5px;
-            min-height: 60px;
+            min-height: 40px;
             word-break: break-word;
         }
 
@@ -202,13 +207,58 @@
             50% { transform: translateX(-50%) translateY(-10px); }
         }
 
-        /* 响应式 */
+        /* 响应式 - 手机端 */
         @media (max-width: 480px) {
-            .title {
-                font-size: 10vw;
+            body {
+                padding: 30px 12px 100px;
             }
+
+            .title {
+                font-size: 11vw;
+            }
+
             .subtitle {
-                font-size: 5vw;
+                font-size: 5.5vw;
+            }
+
+            .date-text {
+                font-size: 4.5vw;
+            }
+
+            .typewriter-wrapper {
+                padding: 16px 12px;
+                margin-top: 20px;
+                border-radius: 12px;
+            }
+
+            .typewriter-text {
+                font-size: 14px;
+                line-height: 1.8;
+            }
+
+            .big-heart {
+                font-size: 35vw;
+            }
+
+            .hint {
+                bottom: 30px;
+                font-size: 12px;
+            }
+        }
+
+        /* 响应式 - 小屏手机 */
+        @media (max-width: 360px) {
+            .typewriter-text {
+                font-size: 13px;
+                line-height: 1.7;
+            }
+
+            .title {
+                font-size: 12vw;
+            }
+
+            .big-heart {
+                font-size: 38vw;
             }
         }
     </style>
